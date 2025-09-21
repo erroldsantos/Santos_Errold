@@ -1,0 +1,223 @@
+:root {
+  --primary: #4a90e2;
+  --primary-dark: #357ab8;
+  --accent: #ff6b6b;
+  --accent-light: #ffecec;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #ffffff;
+  --border: #dfe6e9;
+  --bg-light: #f5f7fa;
+  --bg-card: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  margin: 0;
+  padding: 2rem;
+}
+
+.main-container {
+  max-width: 960px;
+  margin: auto;
+}
+
+.page-header {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  background-color: transparent;
+  padding: 1.5rem;
+  border-radius: 16px;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+#btn-add-user {
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#btn-add-user:hover {
+  background: #ff4c4c;
+}
+
+#search-user {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: white;
+  color: var(--text-main);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.student-count {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-left: auto;
+}
+
+.data-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table thead {
+  background: var(--bg-light);
+}
+
+.data-table th {
+  text-align: left;
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.data-table tbody tr:hover {
+  background-color: #f0f4f8;
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-small {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  border: 1px solid var(--danger);
+}
+
+.btn-danger:hover {
+  background: transparent;
+  color: var(--danger);
+}
+
+#pagination-info {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+/* Pagination */
+.pagination-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pagination-list {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+  background-color: #e5e5e5;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.pagination-link:hover {
+  background-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-item.active .pagination-link {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(74, 144, 226, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-small {
+    width: 100%;
+    text-align: center;
+  }
+}

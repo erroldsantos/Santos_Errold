@@ -1,0 +1,144 @@
+:root {
+  --primary: #4a90e2;
+  --primary-dark: #357ab8;
+  --secondary: #f5f7fa;
+  --accent: #ff6b6b;
+  --accent-light: #ffecec;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --border: #dfe6e9;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  color: white;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.card-header p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+
+.form-body {
+  padding: 1.5rem;
+  background-color: var(--secondary);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+.btn-secondary {
+  color: var(--accent);
+  background-color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin: 1rem;
+    border-radius: 12px;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}

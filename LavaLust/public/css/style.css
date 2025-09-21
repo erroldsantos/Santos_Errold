@@ -1,0 +1,220 @@
+:root {
+  --primary: #4a90e2;
+  --primary-dark: #357ab8;
+  --accent: #ff6b6b;
+  --accent-dark: #e04848;
+  --danger: #e74c3c;
+  --success: #2ecc71;
+
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --text-light: #ffffff;
+  --border: #dfe6e9;
+  --bg-light: #f5f7fa;
+  --bg-card: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  margin: 0;
+  padding: 2rem;
+}
+
+.container,
+.main-container {
+  max-width: 960px;
+  margin: auto;
+}
+
+.card,
+.data-card,
+#update-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  border: 1px solid var(--border);
+}
+
+.header,
+.page-header,
+#update-header {
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  padding: 1.5rem;
+  border-radius: 16px 16px 0 0;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.header h2,
+.page-header h1,
+#update-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-light);
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.student-count {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  margin-top: 0.5rem;
+}
+
+form {
+  background-color:linear-gradient(to right, var(--primary), var(--primary-dark));
+  padding: 1.5rem;
+  border-radius: 0 0 16px 16px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0.75rem;
+  left: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  background: var(--bg-light);
+  padding: 0 0.25rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  background-color: white;
+  color: var(--text-main);
+  transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: transparent;
+}
+
+.form-group input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+}
+
+.form-group input:focus+label,
+.form-group input:not(:placeholder-shown)+label {
+  top: -0.6rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--primary);
+}
+
+.form-group input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--danger);
+}
+
+.form-group input:valid:not(:focus):not(:placeholder-shown) {
+  border-color: var(--success);
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to right, var(--accent), var(--accent-dark));
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background-color: white;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-light);
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .header h2,
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+#search-user {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--primary);
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+
+#search-user::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+#search-user:focus {
+  outline: none;
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+}
