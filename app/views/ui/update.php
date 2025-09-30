@@ -18,7 +18,7 @@
       
       <form id="update-student-form" method="POST">
         <div class="form-group">
-          <label for="update-first-name">First Name</label>
+          <label for="update-first-name">Name</label>
           <input 
             type="text" 
             id="update-first-name"

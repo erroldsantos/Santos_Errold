@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Account</title>
-  <link rel="stylesheet" href="<?= base_url() . 'public/css/create.css' ?>">
+  <link rel="stylesheet" href="https://santos-errold.onrender.com/public/css/create.css">
 </head>
 <body>
   <div class="container">
