@@ -70,14 +70,18 @@ body {
 }
 
 .input-group input {
-  width: 100%;
-  padding: 0.75rem 1rem;
+  width: 95%;              
+  padding: 0.6rem 0.9rem;  
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 0.95rem;
   background-color: #ffffff;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;   
+  margin: 0 auto;          
+  display: block;
 }
+
 
 .input-group input:focus {
   border-color: var(--primary);

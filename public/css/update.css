@@ -54,7 +54,7 @@ body {
 
 #update-student-form {
   padding: 1.5rem;
-  background-color: var(--bg-light);
+  background-color: transparent; /* no white box */
 }
 
 .form-group {
@@ -75,15 +75,17 @@ body {
 }
 
 .form-group input {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 12px;
+  width: 95%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
   border: 1px solid var(--border);
   font-size: 1rem;
   background-color: white;
   color: var(--text-main);
   transition: border-color 0.3s ease;
+  box-sizing: border-box;
 }
+
 
 .form-group input::placeholder {
   color: transparent;
