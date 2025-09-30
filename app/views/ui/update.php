@@ -18,7 +18,6 @@
       
       <form id="update-student-form" method="POST">
         <div class="form-group">
-          <label for="update-first-name">Name</label>
           <input 
             type="text" 
             id="update-first-name"
@@ -30,7 +29,6 @@
         </div>
         
         <div class="form-group">
-          <label for="update-last-name">Last Name</label>
           <input 
             type="text" 
             id="update-last-name"
@@ -42,7 +40,6 @@
         </div>
         
         <div class="form-group">
-          <label for="update-email">Email Address</label>
           <input 
             type="email" 
             id="update-email"
