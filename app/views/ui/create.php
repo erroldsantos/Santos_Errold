@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create Account</title>
-  <link rel="stylesheet" href="https://santos-errold.onrender.com/public/css/create.css">
+  <link rel="stylesheet" href="<?= base_url() . 'public/css/create.css' ?>">
 </head>
 <body>
   <div class="container">
@@ -28,6 +28,11 @@
         <div class="input-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="john@example.com" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password (min. 6 characters)" required />
         </div>
 
         <div class="form-footer">

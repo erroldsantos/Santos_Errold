@@ -47,17 +47,29 @@ body {
 }
 
 #btn-add-user {
-  background: var(--accent);
-  color: white;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  font-weight: 600;
+  background: var(--primary);
+  color: var(--bg-light);
+  padding: 0.2rem 5rem;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-weight: 200;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 #btn-add-user:hover {
-  background: #ff4c4c;
+  background: white;
+  color: var(--primary);
+}
+
+#btn-logout {
+  background: var(--danger);
+  color: var(--bg-light);
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--danger);
+  border-radius: 10px;
+  font-weight: 200;
+  text-decoration: none;
 }
 
 #search-user {
@@ -151,6 +163,12 @@ body {
 .btn-danger:hover {
   background: transparent;
   color: var(--danger);
+}
+
+.btn-danger1 {
+  background: var(--danger);
+  color: white;
+  border: 1px solid var(--danger);
 }
 
 #pagination-info {

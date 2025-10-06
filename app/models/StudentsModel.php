@@ -62,4 +62,14 @@ class StudentsModel extends Model
         return $this->db->raw($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Get user by email for authentication
+     */
+    public function get_by_email($email)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE email = ? AND {$this->soft_delete_column} IS NULL";
+        $result = $this->db->raw($sql, [$email]);
+        return $result ? $result->fetch(PDO::FETCH_ASSOC) : null;
+    }
+
 }

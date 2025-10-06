@@ -6,7 +6,12 @@ class StudentsController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->call->library('pagination');
+        $this->call->library(['pagination', 'lauth']);
+
+        // Check if user is logged in for all actions
+        if (!$this->lauth->is_logged_in()) {
+            redirect('auth/login');
+        }
 
         $this->pagination->set_theme('custom');
         $this->pagination->set_custom_classes([
@@ -50,6 +55,8 @@ class StudentsController extends Controller
             $data['total_records'] = $total_rows;
             $data['pagination_data'] = $pagination_data;
             $data['pagination_links'] = $this->pagination->paginate();
+            $data['search'] = $search;
+            $data['current_user'] = $this->lauth->get_user_data();
 
             $this->call->view('ui/get_all', $data);
 
@@ -62,10 +69,20 @@ class StudentsController extends Controller
     function create()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $password = $_POST['password'];
+            
+            // Validate password
+            if (strlen($password) < 6) {
+                // You can add error handling here
+                $this->call->view('ui/create', ['error' => 'Password must be at least 6 characters long.']);
+                return;
+            }
+            
             $data = [
                 'last_name' => $_POST['last_name'],
                 'first_name' => $_POST['first_name'],
-                'email' => $_POST['email']
+                'email' => $_POST['email'],
+                'password' => $password
             ];
             $this->StudentsModel->insert($data);
             redirect('users');
@@ -81,6 +98,17 @@ class StudentsController extends Controller
                 'first_name' => $_POST['first_name'],
                 'email' => $_POST['email']
             ];
+            
+            // Only update password if provided
+            if (!empty($_POST['password'])) {
+                if (strlen($_POST['password']) < 6) {
+                    // You can add error handling here
+                    $this->call->view('ui/update', ['user' => $contents, 'error' => 'Password must be at least 6 characters long.']);
+                    return;
+                }
+                $data['password'] = $_POST['password'];
+            }
+            
             $this->StudentsModel->update($id, $data);
             redirect('users');
         }

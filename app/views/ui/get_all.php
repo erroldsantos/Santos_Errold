@@ -12,14 +12,23 @@
 <body>
   <div class="main-container">
     <header class="page-header">
-      <h1 class="form-title">USERS MANAGEMENT</h1><a id="btn-add-user" class="btn btn-primary"
-        href="<?= base_url() . 'users/create' ?>"><span>Add New Accounts</span></a>
-
-
-      <form method="get" action="/users/get-all">
-        <input id="search-user" type="text" name="search" value="<?= $search ?? '' ?>" placeholder="Search...">
-      </form>
-
+      <h1 class="form-title">USERS MANAGEMENT</h1>
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <?php if (isset($current_user)): ?>
+          <span style="color: #1a0e0eff; font-size: 20px; font-family: 'Franklin Gothic Medium';">
+            Welcome, <?= htmlspecialchars($current_user['first_name'] . ' ' . $current_user['last_name']) ?>
+          </span>
+        <?php endif; ?>
+        <a id="btn-add-user" class="btn btn-primary" href="<?= base_url() . 'users/create' ?>">
+          <span>Add New Account</span>
+        </a>
+        <form method="get" action="/users/get-all">
+          <input id="search-user" type="text" name="search" value="<?= $search ?? '' ?>" placeholder="Search...">
+        </form>
+        <button id="btn-logout" class="btn btn-danger1 btn-small" onclick="window.location.href='<?= base_url() . 'auth/logout' ?>'">
+          Logout
+        </button>
+      </div>
     </header>
     <div class="data-card">
       <table class="data-table" id="students-table">

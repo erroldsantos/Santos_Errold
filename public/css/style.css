@@ -204,7 +204,7 @@ form {
   font-weight: 500;
   box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
   transition: all 0.3s ease;
-  width: 100%;
+  width: 95%;
   max-width: 280px;
 }
 

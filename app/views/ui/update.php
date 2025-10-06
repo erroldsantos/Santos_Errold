@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Student</title>
-  <link rel="stylesheet" href="https://santos-errold.onrender.com/public/css/style.css">
-  <link rel="stylesheet" href="https://santos-errold.onrender.com/public/css/update.css">
+  <link rel="stylesheet" href="<?= base_url() . 'public/css/update.css' ?>">
 </head>
 
 <body>
@@ -48,6 +47,16 @@
             placeholder="Enter email address"
             required`
           >
+        </div>
+        
+        <div class="form-group">
+          <input 
+            type="password" 
+            id="update-password"
+            name="password" 
+            placeholder="Enter new password (leave blank to keep current)"
+          >
+          <small style="color: #666; font-size: 12px;">Leave blank to keep current password</small>
         </div>
         
         <div class="form-actions">
